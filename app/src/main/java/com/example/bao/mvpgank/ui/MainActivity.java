@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements MeiziView, SwipeR
         refreshLayout = (SwipeRefreshLayout) findViewById(R.id.refresh);
         presenter = new MeiziPresenterImpl(this);
         refreshLayout.setOnRefreshListener(this);
-        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
+        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2,1));
         adapter = new MeiziAdapter(getApplicationContext());
 //        testadapter = new TestAdapter(getApplicationContext());
         recyclerView.setAdapter(adapter);

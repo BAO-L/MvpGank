@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:padding="2dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <ImageView
+    <com.example.bao.mvpgank.widget.RatioImageview
         android:id="@+id/iv_meizi"
-        android:scaleType="centerCrop"
+        android:scaleType="fitXY"
         android:background="@mipmap/ic_launcher_round"
         android:layout_width="match_parent"
-        android:layout_height="250dp" />
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"/>
     <TextView
         android:id="@+id/tv_date"
         android:text="24242424"

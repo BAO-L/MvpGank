@@ -9,6 +9,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.bao.mvpgank.R;
 import com.example.bao.mvpgank.model.entity.Meizi;
+import com.example.bao.mvpgank.widget.RatioImageview;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -37,9 +38,11 @@ public class MeiziAdapter extends BaseQuickAdapter<Meizi.ResultsBean,BaseViewHol
     @Override
     protected void convert(BaseViewHolder helper, Meizi.ResultsBean item) {
 
+        RatioImageview imageview = helper.getView(R.id.iv_meizi);
+        imageview.setOrigalSize(4,5);
         System.out.println("url "+item.getUrl());
-        Picasso.with(context).load(item.getUrl()).into((ImageView) helper.getView(R.id.iv_meizi));
-        helper.setText(R.id.tv_date,item.getDesc());
+        Picasso.with(context).load(item.getUrl()).into(imageview);
+        helper.setText(R.id.tv_date,item.getUrl());
 
 
     }
