@@ -1,6 +1,5 @@
 package com.example.bao.mvpgank.model;
 
-import com.example.bao.mvpgank.model.entity.Meizi;
 
 import java.util.List;
 
@@ -9,6 +8,6 @@ import java.util.List;
  */
 
 public interface OnLoadListener {
-    void onSuccess(List<Meizi.ResultsBean> list);
+    void onSuccess(List<?> list);
     void onFailed(Exception e,String s);
 }

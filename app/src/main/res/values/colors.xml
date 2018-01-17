@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#d33a31</color>
+    <color name="colorPrimaryDark">#781108</color>
+    <color name="colorAccent">#1452e4</color>
+
+
+    <color name="colorPrimaryNight">#212020</color>
+    <color name="colorPrimaryDarkNight">#0a0807</color>
+    <color name="colorAccentNight">#212020</color>
+
+
+
+
+
+
+
+    <color name="toolbarColor">#d33a31</color>
+    <color name="white">#ece8e9</color>
+    <color name="tabColor">#f9f3f3</color>
+    <color name="gray">#c2c2c2</color>
+    <color name="black">#181717</color>
+    <color name="red">#ab1212</color>
+    <color name="toolbarColor_night">#393939</color>
+    <color name="background_night">#393939</color>
+    <color name="background">#b7b7b7</color>
+    <color name="nav_text">#000000</color>
+    <color name="nav_text_night">#ffffff</color>
+    <color name="text_night">#b65c5c</color>
+    <color name="bg_news">#55a486</color>
 </resources>
