@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.bao.mvpgank.ui.activity.WebActivity">
+
+    <include layout="@layout/toolbar_laout" />
+
+    <com.example.bao.mvpgank.widget.ProgressWebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    </com.example.bao.mvpgank.widget.ProgressWebView>
+</android.support.design.widget.CoordinatorLayout>
