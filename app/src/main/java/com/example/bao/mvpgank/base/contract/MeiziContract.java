@@ -18,6 +18,6 @@ public class MeiziContract {
     }
 
     public interface Presenter{
-        void getMeiziData(int page);
+        void getMeiziData();
     }
 }

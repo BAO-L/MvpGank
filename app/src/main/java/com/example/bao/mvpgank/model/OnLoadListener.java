@@ -9,5 +9,5 @@ import java.util.List;
 
 public interface OnLoadListener {
     void onSuccess(List<?> list);
-    void onFailed(Exception e,String s);
+    void onFailed(String s);
 }

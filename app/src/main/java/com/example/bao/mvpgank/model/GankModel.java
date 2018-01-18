@@ -5,7 +5,7 @@ package com.example.bao.mvpgank.model;
  */
 
 public interface GankModel {
-    void onLoadImage(OnLoadListener listener,int page);
+    void onLoadImage(OnLoadListener listener);
     void onLoadAndroid(OnLoadListener listener,int page);
     void onLoadIos(OnLoadListener listener,int page);
     void onLoadDaily(OnLoadListener listener,int year,int month,int day);

@@ -16,7 +16,6 @@ public class HttpUtil {
                 .baseUrl(Constants.GANK_API)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-
         apiService = retrofit.create(ApiService.class);
     }
 

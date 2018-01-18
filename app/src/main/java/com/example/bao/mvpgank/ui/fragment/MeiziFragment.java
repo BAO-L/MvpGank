@@ -83,9 +83,9 @@ public class MeiziFragment extends Fragment implements MeiziContract.View, Swipe
         });
 
         adapter.setOnLoadMoreListener(() -> {
-            page++;
-            Log.d(TAG, "onLoadMoreRequested: current page: "+page);
-            presenter.getMeiziData(page);
+//            page++;
+//            Log.d(TAG, "onLoadMoreRequested: current page: "+page);
+            presenter.getMeiziData();
             adapter.loadMoreEnd();
         }, rvMeizi);
         adapter.disableLoadMoreIfNotFullPage();
@@ -148,8 +148,8 @@ public class MeiziFragment extends Fragment implements MeiziContract.View, Swipe
     public void onRefresh() {
         if(data!=null){
             data.clear();
-            page = 1;
+//            page = 1;
         }
-        presenter.getMeiziData(page);
+        presenter.getMeiziData();
     }
 }

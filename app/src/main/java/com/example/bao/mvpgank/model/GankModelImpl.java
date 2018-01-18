@@ -26,7 +26,7 @@ import retrofit2.Response;
 
 public class GankModelImpl implements GankModel {
     @Override
-    public void onLoadImage(final OnLoadListener listener, int page) {
+    public void onLoadImage(final OnLoadListener listener) {
 
         ApiService service = HttpUtil.getService();
 
@@ -35,8 +35,12 @@ public class GankModelImpl implements GankModel {
         call.enqueue(new Callback<TechNews>() {
             @Override
             public void onResponse(Call<TechNews> call, Response<TechNews> response) {
-                List<TechNews.ResultsBean> list = response.body().getResults();
-                listener.onSuccess(list);
+                if (response.body()!=null) {
+                    List<TechNews.ResultsBean> list = response.body().getResults();
+                    listener.onSuccess(list);
+                }else {
+                    listener.onFailed("刷新太快咯，请重试...");
+                }
             }
 
             @Override
@@ -60,7 +64,7 @@ public class GankModelImpl implements GankModel {
 
             @Override
             public void onFailure(retrofit2.Call<TechNews> call, Throwable t) {
-                listener.onFailed((Exception) t, "哎呀！网络连接失败啦！！！/(ㄒoㄒ)/~~");
+                listener.onFailed("哎呀！网络连接失败啦！！！/(ㄒoㄒ)/~~");
 
             }
         });
@@ -84,7 +88,7 @@ public class GankModelImpl implements GankModel {
 
             @Override
             public void onFailure(retrofit2.Call<TechNews> call, Throwable t) {
-                listener.onFailed((Exception) t, "failed");
+                listener.onFailed("请重试");
 
             }
         });
@@ -113,18 +117,6 @@ public class GankModelImpl implements GankModel {
                 TechNews.ResultsBean fuli = result.getFuli().get(0);
                 fuli.setItemType(1);
                 list.add(fuli);
-//                Title title = new Title();
-//                title.setItemType(0);
-//                title.setTitle("Android");
-//                list.add(title);
-//                List<Daily.ResultsBean.AndroidBean> androids = result.getAndroid();
-//                for (int i = 0; i < androids.size(); i++) {
-//                    Daily.ResultsBean.AndroidBean data = androids.get(i);
-//                    data.setItemType(2);
-//                    list.add(data);
-//                }
-//                title.setTitle("IOS");
-//                list.add(title);
 
                 List<TechNews.ResultsBean> android = result.getAndroid();
                 List<TechNews.ResultsBean> ios = result.getiOS();
@@ -145,7 +137,7 @@ public class GankModelImpl implements GankModel {
 
             @Override
             public void onFailure(Call<Daily> call, Throwable t) {
-                listener.onFailed((Exception) t, "hehehhehhe");
+                listener.onFailed( "请重试");
 
             }
         });

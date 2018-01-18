@@ -29,7 +29,7 @@ public class Androidpresenter implements NewsContract.Presenter, OnLoadListener 
     }
 
     @Override
-    public void onFailed(Exception e, String s) {
+    public void onFailed(String s) {
         view.hideProgress();
         view.showFailed(s);
     }

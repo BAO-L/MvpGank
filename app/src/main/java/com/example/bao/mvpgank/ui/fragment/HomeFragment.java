@@ -81,9 +81,9 @@ public class HomeFragment extends Fragment implements NewsContract.View, SwipeRe
 
         presenter = new DailyPresenter(this);
         rvDaily.setLayoutManager(new LinearLayoutManager(getActivity()));
-        data = CacheUtil.readObject("home");
+//        data = CacheUtil.readObject("home");
 
-        System.out.println(data.size());
+
         adapter = new DailyAdapter(getActivity(), data);
         rvDaily.setAdapter(adapter);
         refreshDaily.setOnRefreshListener(this);
@@ -122,7 +122,7 @@ public class HomeFragment extends Fragment implements NewsContract.View, SwipeRe
         }
         System.out.println("list size :"+list.size());
         data.addAll(list);
-        CacheUtil.saveObject(data,"home");
+//        CacheUtil.saveObject(data,"home");
         System.out.println("saving....");
         adapter.setNewData(data);
 

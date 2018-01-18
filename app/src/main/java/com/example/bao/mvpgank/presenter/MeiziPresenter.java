@@ -22,9 +22,9 @@ public class MeiziPresenter implements MeiziContract.Presenter, OnLoadListener {
     }
 
     @Override
-    public void getMeiziData(int page) {
+    public void getMeiziData() {
         meiziView.showProgress();
-        meiziModel.onLoadImage(this,page);
+        meiziModel.onLoadImage(this);
 
     }
 
@@ -38,7 +38,7 @@ public class MeiziPresenter implements MeiziContract.Presenter, OnLoadListener {
     }
 
     @Override
-    public void onFailed(Exception e, String s) {
+    public void onFailed(String s) {
         meiziView.hideProgress();
         meiziView.showFailed(s);
 
