@@ -22,7 +22,7 @@ public class CacheUtil {
 
     private static final long CACHE_TIME = 60 * 60 * 24 * 1000;
 
-    public static <T> boolean saveObject(List<T> list, String file) {
+    public static boolean saveObject(Object list, String file) {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
         try {
@@ -44,22 +44,18 @@ public class CacheUtil {
         }
     }
 
-    public static <T> List<T> readObject(String file) {
+    public static List<Object> readObject(String file) {
         FileInputStream fis = null;
         ObjectInputStream ois = null;
         try {
             fis = App.getContext().openFileInput(file);
             ois = new ObjectInputStream(fis);
-            return (List<T>) ois.readObject();
+            return (List<Object>) ois.readObject();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             try {
                 ois.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            try {
                 fis.close();
             } catch (Exception e) {
                 e.printStackTrace();

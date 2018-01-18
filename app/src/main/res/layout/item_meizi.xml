@@ -11,12 +11,5 @@
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:contentDescription="@string/meizi" />
-    <TextView
-        android:id="@+id/tv_date"
-        android:textSize="20sp"
-        android:textColor="@color/colorAccent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
 
 </LinearLayout>

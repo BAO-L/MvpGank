@@ -52,13 +52,13 @@ public class MeiziAdapter extends BaseQuickAdapter<TechNews.ResultsBean,BaseView
         imageview.setLayoutParams(lp);
 //        imageview.setOrigalSize(4,5);
 //        System.out.println("url "+item.getUrl());
-        Picasso.with(context).load(item.getUrl()).centerCrop()
+        Picasso.with(context).load(item.getUrl()+"?imageView2/0/w/150")
                 .into(imageview);
 //        helper.setText(R.id.tv_date,item.getDesc());
     }
 
     private int generaHeight() {
-        return (int) (Math.random() * 300 + 500);
+        return (int) (Math.random() * 200 + 400);
     }
 
 }

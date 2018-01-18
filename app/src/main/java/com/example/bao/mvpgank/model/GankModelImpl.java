@@ -30,7 +30,8 @@ public class GankModelImpl implements GankModel {
 
         ApiService service = HttpUtil.getService();
 
-        Call<TechNews> call = service.getMeizi(Constants.PAGE_SIZE, page);
+//        Call<TechNews> call = service.getMeizi(Constants.PAGE_SIZE, page);
+        Call<TechNews> call = service.getRandomMeizi(Constants.PAGE_SIZE);
         call.enqueue(new Callback<TechNews>() {
             @Override
             public void onResponse(Call<TechNews> call, Response<TechNews> response) {

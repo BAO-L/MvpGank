@@ -44,7 +44,7 @@ public interface ApiService {
     /**
      * 随机妹纸图
      */
-    @GET("福利/{num}")
+    @GET("random/data/福利/{num}")
     Call<TechNews> getRandomMeizi(@Path("num") int num);
 
     @GET("day/{year}/{month}/{day}")

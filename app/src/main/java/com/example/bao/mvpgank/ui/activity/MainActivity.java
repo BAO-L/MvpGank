@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
@@ -26,6 +27,7 @@ import com.example.bao.mvpgank.R;
 import com.example.bao.mvpgank.app.Constants;
 import com.example.bao.mvpgank.db.Favor;
 import com.example.bao.mvpgank.http.ApiService;
+import com.example.bao.mvpgank.http.HttpUtil;
 import com.example.bao.mvpgank.model.entity.TechNews;
 import com.example.bao.mvpgank.ui.adapter.TabPagerAdapter;
 import com.example.bao.mvpgank.ui.fragment.AndroidFragment;
@@ -85,11 +87,12 @@ public class MainActivity extends AppCompatActivity implements ThemeManager.OnTh
 
     private void getRandomMeizi() {
         System.out.println("正在获取随机妹子图。。。。。");
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(Constants.GANK_RANDOM)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        ApiService service = retrofit.create(ApiService.class);
+//        Retrofit retrofit = new Retrofit.Builder()
+//                .baseUrl(Constants.GANK_RANDOM)
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .build();
+//        ApiService service = retrofit.create(ApiService.class);
+        ApiService service = HttpUtil.getService();
         Call<TechNews> call = service.getRandomMeizi(1);
         call.enqueue(new Callback<TechNews>() {
             @Override
@@ -127,9 +130,10 @@ public class MainActivity extends AppCompatActivity implements ThemeManager.OnTh
                 case R.id.nav_favor:
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this,FavorActivity.class);
-                    startActivity(intent);
+                    new Handler().postDelayed(()->startActivity(intent),800);
+
                 default:
-                    drawerLayout.closeDrawers();
+//                    drawerLayout.closeDrawers();
                     break;
             }
             drawerLayout.closeDrawers();
