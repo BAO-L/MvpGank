@@ -1,6 +1,7 @@
 package com.example.bao.mvpgank.ui.adapter;
 
 import android.animation.Animator;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.ViewGroup;
@@ -26,6 +27,7 @@ public class MeiziAdapter extends BaseQuickAdapter<TechNews.ResultsBean,BaseView
     private Context context;
     private Map<Integer,Integer> mHeightMap;
 
+    @SuppressLint("UseSparseArrays")
     public MeiziAdapter(Context context) {
         super(R.layout.item_meizi);
         this.context = context;

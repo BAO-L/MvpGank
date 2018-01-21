@@ -11,6 +11,7 @@ import android.webkit.WebHistoryItem;
 import android.widget.TextView;
 
 import com.example.bao.mvpgank.R;
+import com.example.bao.mvpgank.utils.DayNightHelper;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -47,6 +48,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
         ButterKnife.bind(this);
+
         if (toolbar != null){
             toolbar.setTitleTextColor(Color.WHITE);
             toolbar.setTitle("");
@@ -85,4 +87,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         });
 
     }
+
+
+
 }

@@ -1,23 +1,14 @@
 package com.example.bao.mvpgank.ui.adapter;
 
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-import android.support.v7.widget.CardView;
-import android.view.View;
 import android.widget.ImageView;
 
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.bao.mvpgank.R;
-import com.example.bao.mvpgank.model.entity.Daily;
 import com.example.bao.mvpgank.model.entity.MultiItem;
 import com.example.bao.mvpgank.model.entity.Title;
 import com.example.bao.mvpgank.model.entity.TechNews;
-import com.example.bao.mvpgank.ui.activity.WebActivity;
-import com.example.bao.mvpgank.ui.fragment.HomeFragment;
-import com.example.bao.mvpgank.utils.ThemeManager;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

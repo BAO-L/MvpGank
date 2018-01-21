@@ -22,7 +22,7 @@ public class ProgressWebView extends WebView {
         progressbar = new ProgressBar(context, null,
                 android.R.attr.progressBarStyleHorizontal);
         progressbar.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
-                10, 0, 0));
+                5, 0, 0));
 
         Drawable drawable = context.getResources().getDrawable(R.drawable.progress_bar_states);
         progressbar.setProgressDrawable(drawable);

@@ -39,12 +39,13 @@ public class GankModelImpl implements GankModel {
                     List<TechNews.ResultsBean> list = response.body().getResults();
                     listener.onSuccess(list);
                 }else {
-                    listener.onFailed("刷新太快咯，请重试...");
+                    listener.onFailed("哎哟，请重试...");
                 }
             }
 
             @Override
             public void onFailure(Call<TechNews> call, Throwable t) {
+                listener.onFailed("服务器错误，请重试..");
 
             }
         });

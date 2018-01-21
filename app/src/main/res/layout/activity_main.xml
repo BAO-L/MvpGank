@@ -20,7 +20,6 @@
             app:title="@string/gank"
             app:titleTextColor="@color/white"
             app:navigationIcon="@mipmap/logo"
-            android:background="@color/colorPrimary"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:layout_scrollFlags="scroll|enterAlways">
@@ -30,7 +29,6 @@
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
             app:tabTextColor="@color/gray"
             app:tabSelectedTextColor="@color/tabColor"
             app:tabIndicatorColor="@color/colorPrimary"
@@ -59,7 +57,18 @@
         app:itemIconTint="@null"
         android:layout_gravity="start"
         app:menu="@menu/menu_nav"
+        android:background="?attr/themeBackground"
         >
+        <android.support.v7.widget.SwitchCompat
+            android:drawableLeft="@mipmap/ic_moon"
+            android:drawablePadding="10dp"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:text="@string/nightMode"
+            android:id="@+id/switch_theme"
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </android.support.design.widget.NavigationView>
 
 </android.support.v4.widget.DrawerLayout>

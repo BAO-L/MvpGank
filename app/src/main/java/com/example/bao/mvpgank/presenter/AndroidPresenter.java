@@ -11,11 +11,11 @@ import java.util.List;
  * Created by BAO on 2017/12/10.
  */
 
-public class Androidpresenter implements NewsContract.Presenter, OnLoadListener {
+public class AndroidPresenter implements NewsContract.Presenter, OnLoadListener {
     private GankModel model;
     private NewsContract.View view;
 
-    public Androidpresenter(NewsContract.View view) {
+    public AndroidPresenter(NewsContract.View view) {
         this.view = view;
         model = new GankModelImpl();
     }

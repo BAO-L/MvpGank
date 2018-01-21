@@ -85,6 +85,7 @@ public class MeiziFragment extends Fragment implements MeiziContract.View, Swipe
         adapter.setOnLoadMoreListener(() -> {
 //            page++;
 //            Log.d(TAG, "onLoadMoreRequested: current page: "+page);
+            Log.d(TAG, "initListeners: getting meizis");
             presenter.getMeiziData();
             adapter.loadMoreEnd();
         }, rvMeizi);
@@ -97,8 +98,10 @@ public class MeiziFragment extends Fragment implements MeiziContract.View, Swipe
         rvMeizi.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
         adapter = new MeiziAdapter(getActivity().getApplicationContext());
 
-        adapter.setNotDoAnimationCount(10);
-        adapter.openLoadAnimation();
+        rvMeizi.getItemAnimator().setChangeDuration(0);
+
+//        adapter.setNotDoAnimationCount(10);
+//        adapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         rvMeizi.setAdapter(adapter);
 //        adapter.disableLoadMoreIfNotFullPage();
         refreshMeizi.setOnRefreshListener(this);

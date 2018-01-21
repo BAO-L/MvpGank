@@ -12,11 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.bao.mvpgank.R;
 import com.example.bao.mvpgank.base.contract.NewsContract;
 import com.example.bao.mvpgank.model.entity.TechNews;
-import com.example.bao.mvpgank.presenter.Androidpresenter;
+import com.example.bao.mvpgank.presenter.AndroidPresenter;
 import com.example.bao.mvpgank.ui.activity.WebActivity;
 import com.example.bao.mvpgank.ui.adapter.NewsAdapter;
 
@@ -26,7 +25,6 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -37,8 +35,7 @@ public class AndroidFragment extends Fragment implements NewsContract.View, Swip
     RecyclerView rvAndroid;
     @BindView(R.id.refresh_android)
     SwipeRefreshLayout refreshAndroid;
-    Unbinder unbinder;
-    private Androidpresenter presenter;
+    private AndroidPresenter presenter;
     private List<TechNews.ResultsBean> data;
     private NewsAdapter adapter;
     private View view;
@@ -56,7 +53,7 @@ public class AndroidFragment extends Fragment implements NewsContract.View, Swip
         if (view == null) {
             view = inflater.inflate(R.layout.fragment_android, container, false);
             ButterKnife.bind(this, view);
-            presenter = new Androidpresenter(this);
+            presenter = new AndroidPresenter(this);
             init();
             initListeners();
             onRefresh();

@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/MvpGank.iml" filepath="$PROJECT_DIR$/.idea/MvpGank.iml" />
-      <module fileurl="file://E:\Android\MvpGank\MvpGank.iml" filepath="E:\Android\MvpGank\MvpGank.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://E:\Android\MvpGank\app\app.iml" filepath="E:\Android\MvpGank\app\app.iml" />
     </modules>
   </component>
 </project>

@@ -6,7 +6,6 @@ import android.preference.PreferenceManager;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
@@ -14,7 +13,6 @@ import com.example.bao.mvpgank.R;
 import com.example.bao.mvpgank.base.BaseActivity;
 import com.example.bao.mvpgank.db.Favor;
 import com.example.bao.mvpgank.model.entity.MultiItem;
-import com.example.bao.mvpgank.utils.ThemeManager;
 import com.squareup.picasso.Picasso;
 
 import org.litepal.crud.DataSupport;
@@ -23,11 +21,10 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import cn.sharesdk.framework.ShareSDK;
 import cn.sharesdk.onekeyshare.OnekeyShare;
 import uk.co.senab.photoview.PhotoView;
 
-public class ImgActivity extends BaseActivity implements ThemeManager.OnThemeChangeListener {
+public class ImgActivity extends BaseActivity {
 
     @BindView(R.id.photo_view)
     PhotoView photoView;
@@ -41,7 +38,7 @@ public class ImgActivity extends BaseActivity implements ThemeManager.OnThemeCha
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
-        ThemeManager.registerThemeChangeListener(this);
+
         url = getIntent().getStringExtra("url");
 
         ViewCompat.setTransitionName(photoView, "meizi");
@@ -53,7 +50,7 @@ public class ImgActivity extends BaseActivity implements ThemeManager.OnThemeCha
         int theme = prefs.getInt("theme", 0);
 
         System.out.println("theme img :" + theme);
-        ThemeManager.setThemeMode(theme);
+
 
 //        setState();
 
@@ -81,14 +78,6 @@ public class ImgActivity extends BaseActivity implements ThemeManager.OnThemeCha
         return R.layout.activity_img;
     }
 
-    @Override
-    public void onThemeChanged() {
-        toolbar.setBackgroundColor(getResources()
-                .getColor(ThemeManager
-                        .getCurrentThemeRes(ImgActivity.this, R.color.toolbarColor)));
-        photoView.setBackgroundColor(getResources().getColor(ThemeManager
-                .getCurrentThemeRes(ImgActivity.this, R.color.background)));
-    }
 
 
     @Override
@@ -131,7 +120,7 @@ public class ImgActivity extends BaseActivity implements ThemeManager.OnThemeCha
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ThemeManager.unregisterThemeChangeListener(this);
+
     }
 
     private void showShare() {
