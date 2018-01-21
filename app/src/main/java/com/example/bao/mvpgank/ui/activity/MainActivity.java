@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
     Toolbar mainToolbar;
     @BindView(R.id.main_layout)
     CoordinatorLayout mainLayout;
-    SwitchCompat switchCompat;
+
     SwitchCompat switchTheme;
     DayNightHelper mDayNightHelper;
     private long exitTime = 0;
